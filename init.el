@@ -180,11 +180,11 @@
   "cc" 'evilnc-comment-or-uncomment-lines
   "ag" 'projectile-ag
   "," 'switch-to-previous-buffer
-  ; "gg" 'git-gutter+:toggle
-  ; "gd" 'git-gutter+:popup-diff
-  ; "gp" 'git-gutter+:previous-hunk
-  ; "gn" 'git-gutter+:next-hunk
-  ; "gr" 'git-gutter+:revert-hunk
+  "gg" 'git-gutter:toggle
+  ;; "gd" 'git-gutter:popup-diff
+  ;; "gp" 'git-gutter:previous-hunk
+  ;; "gn" 'git-gutter:next-hunk
+  ;; "gr" 'git-gutter:revert-hunk
   "gb" 'mo-git-blame-current
   "gl" 'magit-log
   "gs" 'magit-status
@@ -327,13 +327,12 @@ Repeated invocations toggle between the two most recently open buffers."
  )
 
 ;; Git Gutter
-;;(global-git-gutter+-mode 1)
-;; If you enable global minor mode
-;; (require 'git-gutter)
-;; (global-git-gutter-mode t)
+;; Enable global minor mode
+(require 'git-gutter)
+(global-git-gutter-mode t)
 
 ;; ;; If you would like to use git-gutter.el and linum-mode
-;; (git-gutter:linum-setup)
+(git-gutter:linum-setup)
 
 (require 'smooth-scrolling)
 (setq smooth-scroll-margin 3)
@@ -415,7 +414,6 @@ Repeated invocations toggle between the two most recently open buffers."
 ;     `(company-preview-common ((t :background "gray10" :foreground "#929290")))
 ;     `(company-tooltip-common ((t (:foreground "#cc6666" :background "#151515"))))
 ;     `(company-tooltip-selection ((t (:background "#363636"))))))
-
 
 (add-to-list 'load-path "~/.emacs.d/packages/pbcopy/")
 (require 'pbcopy)
