@@ -18,8 +18,8 @@
 (setq evil-esc-delay 0)
 
 ;; Don't show default text in command bar
-;  ** Currently breaks visual range selection, looking for workaround
-;(add-hook 'minibuffer-setup-hook (lambda () (evil-ex-remove-default)))
+                                        ;  ** Currently breaks visual range selection, looking for workaround
+                                        ;(add-hook 'minibuffer-setup-hook (lambda () (evil-ex-remove-default)))
 
 ;; Make HJKL keys work in special buffers
 (evil-add-hjkl-bindings magit-branch-manager-mode-map 'emacs
@@ -42,6 +42,7 @@
   "." 'find-tag
   "t" 'projectile-find-file
   "b" 'ido-switch-buffer
+  "ib" 'indent-buffer
   "cc" 'evilnc-comment-or-uncomment-lines
   "ag" 'projectile-ag
   "pp" 'projectile-switch-project
@@ -82,6 +83,11 @@
   ;; Don't switch back to the ibuffer!!!
   (if (buffer-exists "*Ibuffer*")  (kill-buffer "*Ibuffer*"))
   (switch-to-buffer (other-buffer (current-buffer) 1)))
+
+(defun indent-buffer ()
+  (interactive)
+  (save-excursion
+    (indent-region (point-min) (point-max) nil)))
 
 ;; =============================================================================
 ;; Evil Bindings

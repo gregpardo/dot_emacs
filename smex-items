@@ -1,17 +1,18 @@
 
 ;; ----- smex-history -----
 (
+ esup
  package-install
  ag
  cd
  5x5
  arp
  dbx
- dig
 )
 
 ;; ----- smex-data -----
 (
  (ag . 1)
  (package-install . 1)
+ (esup . 1)
 )
