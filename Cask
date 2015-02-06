@@ -30,6 +30,7 @@
 (depends-on "evil-nerd-commenter")
 (depends-on "evil-surround")
 (depends-on "evil-visualstar")
+(depends-on "exec-path-from-shell")
 (depends-on "f")
 (depends-on "flx")
 (depends-on "flx-ido")

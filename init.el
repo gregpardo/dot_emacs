@@ -19,6 +19,11 @@
 
 (setq default-directory (f-full (getenv "HOME")))
 
+;; Exec-path-from-shell
+(use-package exec-path-from-shell)
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
+
 ;; Use packages
 (load "~/.emacs.d/init/packages.el")
 

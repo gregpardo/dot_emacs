@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ eval-buffer
  esup
  package-install
  ag
  cd
  5x5
  arp
- dbx
 )
 
 ;; ----- smex-data -----
@@ -15,4 +15,5 @@
  (ag . 1)
  (package-install . 1)
  (esup . 1)
+ (eval-buffer . 4)
 )
