@@ -2,7 +2,6 @@
   (interactive)
   (linum-mode -1)
   (writeroom-mode t)
-  (longlines-mode t)
   (flyspell-mode t)
   (turn-off-smartparens-mode)
   (company-mode -1))
