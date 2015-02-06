@@ -31,13 +31,4 @@
 (use-package coffee-mode)
 
 ;; Custom scripts
-(load "~/.emacs.d/init/mouse.el")
-(load "~/.emacs.d/init/author-mode.el")
-(load "~/.emacs.d/init/alchemist.el")
-(load "~/.emacs.d/init/elixir.el")
-(load "~/.emacs.d/init/evil.el")
-(load "~/.emacs.d/init/underscores.el")
-(load "~/.emacs.d/init/ui.el")
-(load "~/.emacs.d/init/indentation.el")
-(load "~/.emacs.d/init/markdown.el")
-(load "~/.emacs.d/init/misc.el")
+(add-to-list 'load-path "~/.emacs.d/init")
