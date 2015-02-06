@@ -1,5 +1,4 @@
 ;; Enable syntax highlighting in markdown
-(require 'mmm-mode)
 (mmm-add-classes
   '((markdown-rubyp
       :submode ruby-mode

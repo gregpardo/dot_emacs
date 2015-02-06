@@ -21,7 +21,6 @@
 (column-number-mode t)
 
 ;; Powerline
-(use-package powerline)
 (powerline-vim-theme)
 
 ;; Highlight cursor line
@@ -44,12 +43,10 @@
 
 ;; Git Gutter
 ;; Enable global minor mode
-(use-package git-gutter)
 (global-git-gutter-mode t)
 ;; ;; If you would like to use git-gutter.el and linum-mode
 (git-gutter:linum-setup)
 
-(use-package smooth-scrolling)
 (setq smooth-scroll-margin 3)
 ;; Delay updates to give Emacs a chance for other changes
 (setq linum-delay t)

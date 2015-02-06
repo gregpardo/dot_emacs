@@ -69,8 +69,6 @@
 ;; =============================================================================
 (global-evil-surround-mode 1)
 
-(use-package evil-visualstar)
-
 (defun fix-underscore-word ()
   (modify-syntax-entry ?_ "w"))
 

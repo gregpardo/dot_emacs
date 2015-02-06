@@ -25,10 +25,11 @@
   (lambda ()
     (when (string= (buffer-name) "*scratch*")
       (animate-string ";; Greg's Emacs setup" (/ (frame-height) 2)))))
+(setq inhibit-startup-message t)
+(smex-initialize)
 
 ;; Use packages
-(use-package ruby-mode)
-(use-package coffee-mode)
+(load "~/.emacs.d/init/packages.el")
 
 ;; Custom scripts
 (load "~/.emacs.d/init/mouse.el")
@@ -36,11 +37,15 @@
 (load "~/.emacs.d/init/alchemist.el")
 (load "~/.emacs.d/init/elixir.el")
 (load "~/.emacs.d/init/evil.el")
+(load "~/.emacs.d/init/ido.el")
+(load "~/.emacs.d/init/parens.el")
 (load "~/.emacs.d/init/underscores.el")
+(load "~/.emacs.d/init/projectile.el")
 (load "~/.emacs.d/init/ui.el")
 (load "~/.emacs.d/init/indentation.el")
 (load "~/.emacs.d/init/markdown.el")
+(load "~/.emacs.d/init/autocomplete.el")
 (load "~/.emacs.d/init/misc.el")
 
 ;; Recompile everything that needs
-(byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
+;;(byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
