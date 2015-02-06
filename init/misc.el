@@ -19,12 +19,12 @@
     (setq isearch-forward forward)
     (setq string (evil-find-thing forward (if symbol 'symbol 'word)))
     (cond
-      ((null string)
-       (error "No word under point"))
-      (t
-        (setq string
-              (format (if symbol "\\_<%s\\_>" "\\<%s\\>")
-                      (regexp-quote string)))))
+     ((null string)
+      (error "No word under point"))
+     (t
+      (setq string
+            (format (if symbol "\\_<%s\\_>" "\\<%s\\>")
+                    (regexp-quote string)))))
     (evil-push-search-history string forward)
     (my-evil-search string forward t)))
 
@@ -39,25 +39,25 @@
     (let* ((orig (point))
            (start (or start
                       (if forward
-                        (min (point-max) (1+ orig))
+                          (min (point-max) (1+ orig))
                         orig)))
            (isearch-regexp regexp-p)
            (isearch-forward forward)
            (case-fold-search
-             (unless (and search-upper-case
-                          (not (isearch-no-upper-case-p string nil)))
-               case-fold-search)))
+            (unless (and search-upper-case
+                         (not (isearch-no-upper-case-p string nil)))
+              case-fold-search)))
       ;; no text properties, thank you very much
       (set-text-properties 0 (length string) nil string)
       (setq isearch-string string)
       (isearch-update-ring string regexp-p)
       ;; handle opening and closing of invisible area
       (cond
-        ((boundp 'isearch-filter-predicates)
-         (dolist (pred isearch-filter-predicates)
-           (funcall pred (match-beginning 0) (match-end 0))))
-        ((boundp 'isearch-filter-predicate)
-         (funcall isearch-filter-predicate (match-beginning 0) (match-end 0))))
+       ((boundp 'isearch-filter-predicates)
+        (dolist (pred isearch-filter-predicates)
+          (funcall pred (match-beginning 0) (match-end 0))))
+       ((boundp 'isearch-filter-predicate)
+        (funcall isearch-filter-predicate (match-beginning 0) (match-end 0))))
       (evil-flash-search-pattern string t))))
 
 (define-key evil-motion-state-map "*" 'my-evil-prepare-word-search)

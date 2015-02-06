@@ -1,45 +1,45 @@
 ;; Enable syntax highlighting in markdown
 (mmm-add-classes
-  '((markdown-rubyp
-      :submode ruby-mode
-      :face mmm-declaration-submode-face
-      :front "^\{:language=\"ruby\"\}[\n\r]+~~~"
-      :back "^~~~$")))
+ '((markdown-rubyp
+    :submode ruby-mode
+    :face mmm-declaration-submode-face
+    :front "^\{:language=\"ruby\"\}[\n\r]+~~~"
+    :back "^~~~$")))
 
 (mmm-add-classes
-  '((markdown-elixirp
-      :submode elixir-mode
-      :face mmm-declaration-submode-face
-      :front "^\{:language=\"elixir\"\}[\n\r]+~~~"
-      :back "^~~~$")))
+ '((markdown-elixirp
+    :submode elixir-mode
+    :face mmm-declaration-submode-face
+    :front "^\{:language=\"elixir\"\}[\n\r]+~~~"
+    :back "^~~~$")))
 
 (mmm-add-classes
-  '((markdown-jsp
-      :submode js-mode
-      :face mmm-declaration-submode-face
-      :front "^\{:language=\"javascript\"\}[\n\r]+~~~"
-      :back "^~~~$")))
+ '((markdown-jsp
+    :submode js-mode
+    :face mmm-declaration-submode-face
+    :front "^\{:language=\"javascript\"\}[\n\r]+~~~"
+    :back "^~~~$")))
 
 (mmm-add-classes
-  '((markdown-ruby
-      :submode ruby-mode
-      :face mmm-declaration-submode-face
-      :front "^~~~\s?ruby[\n\r]"
-      :back "^~~~$")))
+ '((markdown-ruby
+    :submode ruby-mode
+    :face mmm-declaration-submode-face
+    :front "^~~~\s?ruby[\n\r]"
+    :back "^~~~$")))
 
 (mmm-add-classes
-  '((markdown-elixir
-      :submode elixir-mode
-      :face mmm-declaration-submode-face
-      :front "^~~~\s?elixir[\n\r]"
-      :back "^~~~$")))
+ '((markdown-elixir
+    :submode elixir-mode
+    :face mmm-declaration-submode-face
+    :front "^~~~\s?elixir[\n\r]"
+    :back "^~~~$")))
 
 (mmm-add-classes
-  '((markdown-js
-      :submode js-mode
-      :face mmm-declaration-submode-face
-      :front "^~~~\s?javascript[\n\r]"
-      :back "^~~~$")))
+ '((markdown-js
+    :submode js-mode
+    :face mmm-declaration-submode-face
+    :front "^~~~\s?javascript[\n\r]"
+    :back "^~~~$")))
 
 
 (setq mmm-global-mode 't)

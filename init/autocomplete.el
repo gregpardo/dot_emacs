@@ -15,11 +15,11 @@
 (eval-after-load 'company
   '(progn
      (define-key company-active-map (kbd "TAB")  (lambda ()
-       (interactive)
-       (company-complete-common)
-       (if tip-showing
-         (company-select-next))
-     ))
+                                                   (interactive)
+                                                   (company-complete-common)
+                                                   (if tip-showing
+                                                       (company-select-next))
+                                                   ))
      (define-key company-active-map [tab] 'company-select-next)))
 
 (defun company-pseudo-tooltip-on-explicit-action (command)
@@ -34,8 +34,8 @@
     (`post-command (when (company-explicit-action-p)
                      (company-echo-show-when-idle 'company-fetch-metadata)))
     (`hide
-      (company-echo-hide)
-      (setq tip-showing nil)
+     (company-echo-hide)
+     (setq tip-showing nil)
      )))
 
 (setq company-frontends '(company-pseudo-tooltip-on-explicit-action company-echo-metadata-on-explicit-action-frontend company-preview-if-just-one-frontend))

@@ -1,16 +1,16 @@
 (use-package evil
-             :init (evil-mode 1)
-             :config
-             (progn (setq evil-default-state 'normal)
-                    (setq evil-auto-indent t)
-                    (setq evil-shift-width 2)
-                    (setq evil-search-wrap t)
-                    (setq evil-find-skip-newlines t)
-                    (setq evil-move-cursor-back nil)
-                    (setq evil-mode-line-format 'before)
-                    (setq evil-esc-delay 0.001)
-                    (setq evil-cross-lines t)))
+  :config
+  (progn (setq evil-default-state 'normal)
+         (setq evil-auto-indent t)
+         (setq evil-shift-width 2)
+         (setq evil-search-wrap t)
+         (setq evil-find-skip-newlines t)
+         (setq evil-move-cursor-back nil)
+         (setq evil-mode-line-format 'before)
+         (setq evil-esc-delay 0.001)
+         (setq evil-cross-lines t)))
 
+(evil-mode 1)
 (setq evil-overriding-maps nil)
 (setq evil-intercept-maps nil)
 
@@ -23,12 +23,12 @@
 
 ;; Make HJKL keys work in special buffers
 (evil-add-hjkl-bindings magit-branch-manager-mode-map 'emacs
-                        "K" 'magit-discard-item
-                        "L" 'magit-key-mode-popup-logging)
+  "K" 'magit-discard-item
+  "L" 'magit-key-mode-popup-logging)
 (evil-add-hjkl-bindings magit-status-mode-map 'emacs
-                        "K" 'magit-discard-item
-                        "l" 'magit-key-mode-popup-logging
-                        "h" 'magit-toggle-diff-refine-hunk)
+  "K" 'magit-discard-item
+  "l" 'magit-key-mode-popup-logging
+  "h" 'magit-toggle-diff-refine-hunk)
 (evil-add-hjkl-bindings magit-log-mode-map 'emacs)
 (evil-add-hjkl-bindings magit-commit-mode-map 'emacs)
 (evil-add-hjkl-bindings occur-mode 'emacs)
@@ -44,6 +44,7 @@
   "b" 'ido-switch-buffer
   "cc" 'evilnc-comment-or-uncomment-lines
   "ag" 'projectile-ag
+  "pp" 'projectile-switch-project
   "," 'switch-to-previous-buffer
   "gg" 'git-gutter:toggle
   ;; "gd" 'git-gutter:popup-diff
@@ -62,7 +63,8 @@
   "gh" 'windmove-left
   "vs" 'split-window-right
   "hs" 'split-window-below
-  "x" 'smex)
+  "x" 'smex
+  "s" 'shell-pop)
 
 ;; =============================================================================
 ;; Evil Packages
@@ -105,20 +107,20 @@
 
 (define-key evil-insert-state-map "j" #'cofi/maybe-exit)
 (evil-define-command cofi/maybe-exit ()
-                     :repeat change
-                     (interactive)
-                     (let ((modified (buffer-modified-p)))
-                       (insert "j")
-                       (let ((evt (read-event (format "" ?k)
-                                              nil 0.5)))
-                         (cond
-                           ((null evt) (message ""))
-                           ((and (integerp evt) (char-equal evt ?k))
-                            (delete-char -1)
-                            (set-buffer-modified-p modified)
-                            (push 'escape unread-command-events))
-                           (t (setq unread-command-events (append unread-command-events
-                                                                  (list evt))))))))
+  :repeat change
+  (interactive)
+  (let ((modified (buffer-modified-p)))
+    (insert "j")
+    (let ((evt (read-event (format "" ?k)
+                           nil 0.5)))
+      (cond
+       ((null evt) (message ""))
+       ((and (integerp evt) (char-equal evt ?k))
+        (delete-char -1)
+        (set-buffer-modified-p modified)
+        (push 'escape unread-command-events))
+       (t (setq unread-command-events (append unread-command-events
+                                              (list evt))))))))
 
 (define-key evil-normal-state-map "gh" 'windmove-left)
 (define-key evil-normal-state-map "gj" 'windmove-down)
@@ -133,8 +135,10 @@
             (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)
             (define-key evil-normal-state-local-map (kbd "ma") 'neotree-create-node)
             (define-key evil-normal-state-local-map (kbd "md") 'neotree-delete-node)
-            (define-key evil-normal-state-local-map (kbd "r") 'neotree-refresh)
+            (define-key evil-normal-state-local-map (kbd "R") 'neotree-refresh)
             (define-key evil-normal-state-local-map (kbd "mm") 'neotree-rename-node)
+            (define-key evil-normal-state-local-map (kbd "C") 'neotree-change-root)
+            (define-key evil-normal-state-local-map (kbd "H") 'neotree-hidden-file-toggle)
             ))
 
 ;; Map ctrl-j/k to up down in ido selections

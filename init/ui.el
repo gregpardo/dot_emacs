@@ -21,7 +21,7 @@
 (column-number-mode t)
 
 ;; Powerline
-(powerline-vim-theme)
+(powerline-default-theme)
 
 ;; Highlight cursor line
 (global-hl-line-mode t)
