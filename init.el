@@ -4,7 +4,10 @@
      (funcall mode -1)))
  '(menu-bar-mode tool-bar-mode scroll-bar-mode))
 
-(require 'cask "/opt/boxen/homebrew/Cellar/cask/0.7.2/cask.el")
+(if (eq system-type 'darwin)
+    (require 'cask "/opt/boxen/homebrew/Cellar/cask/0.7.2/cask.el")
+  (require 'cask "~/.cask/cask.el"))
+
 (cask-initialize)
 (require 'pallet)
 (pallet-mode t)
