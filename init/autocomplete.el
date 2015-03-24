@@ -1,6 +1,7 @@
 ;;==============================================================================
 ;; Autocomplete with company-mode
 ;;==============================================================================
+(add-hook 'after-init-hook 'global-company-mode)
 (global-company-mode t)
 (setq company-tooltip-limit 12)                      ; bigger popup window
 (setq company-idle-delay .1)                         ; decrease delay before autocompletion popup shows

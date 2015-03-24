@@ -1,0 +1,28 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/gregpardo/src/scada_portal/lib/" . "scada_portal/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ 
+)
+
+;; ----- ido-work-file-list -----
+(
+ 
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/gregpardo/src/scada_portal/" (21723 36310 0 0) "web/" "test/" "README.md" "priv/" "mix.exs" "lib/" "config/" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/gregpardo/src/scada_portal/lib/scada_portal/" (21723 39479 0 0) "endpoint.ex" "../" "./")
+
+ ("/Users/gregpardo/src/scada_portal/lib/" (21723 39332 0 0) "web.ex" "scada_portal.ex" "scada_portal/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

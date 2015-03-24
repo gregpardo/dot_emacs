@@ -12,6 +12,7 @@
 (depends-on "autopair")
 (depends-on "bind-key")
 (depends-on "cask")
+(depends-on "cider")
 (depends-on "coffee-mode")
 (depends-on "company")
 (depends-on "company-inf-ruby")
